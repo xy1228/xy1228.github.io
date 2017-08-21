@@ -12,6 +12,26 @@
 
 <body translate="no">
 <script src="jquery.js"></script> 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+function autoPlayAudio() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            var globalAudio=document.getElementById("music");
+            globalAudio.play();
+        });
+};
+// 解决ios音乐不自动播放的问题
+autoPlayAudio();
+</script>
 <audio src="1.mp3" id="music" autoplay></audio>
 <script>
       (function () {
